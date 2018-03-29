@@ -5,3 +5,20 @@
 .btn-info {
     margin: 5px;
 }
+
+#images-div img {
+    padding: 10px;
+}
+
+#images-div > div {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
+
+/* #images-div p {
+    display: inline;
+    width: 50%;
+} */
