@@ -1,9 +1,30 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.display-3 {
+    font-size: 4em;
+}
+
+.jumbotron {
+    margin-top: 30px;
+    padding: 2em;
+    background: #17a2b8;
+}
+
 .card {
     margin-top: 20px;
 }
 
-.btn-info {
+.btn-success {
     margin: 5px;
+    background: #8DCED8;
+    border: 0;
+}
+
+.btn-success:hover, .btn-success:active {
+    background: #17a2b8;
+    border: 0;
 }
 
 #images-div img {
@@ -26,7 +47,8 @@ img {
     margin-bottom: 0;
 }
 
-/* #images-div p {
-    display: inline;
-    width: 50%;
-} */
+@media screen and (max-width: 1000px) {
+    .display-3 {
+        font-size: 2.5em;
+    }
+}

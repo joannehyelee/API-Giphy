@@ -6,7 +6,7 @@ $(document).ready(function(){
     $("#buttons-div").empty();
 
         for (var i = 0; i < topics.length; i++) {
-            var gameButton = $('<button class="btn btn-info game-btn">' + topics[i] + '</button>');
+            var gameButton = $('<button class="btn btn-success game-btn">' + topics[i] + '</button>');
             $(gameButton).attr("data-name", topics[i]);
             $("#buttons-div").append(gameButton);
         }
@@ -62,9 +62,10 @@ $(document).ready(function(){
         // Prevents buttons default behavior (submitting form) when clicked
 
         var gameInput = $("#videoGame").val().trim();
-        console.log(gameInput);
 
         topics.push(gameInput);
+
+        $("form").trigger("reset");
 
         displayButtons();
     });
