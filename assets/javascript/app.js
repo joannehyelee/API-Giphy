@@ -20,12 +20,27 @@ $(document).ready(function(){
 
         for (var i = 0; i < results.length; i++) {
             var imagesDiv = $('<div class="col-md-6">');
-            var image = $('<img src="' + results[i].images.fixed_height.url + '">');
+
+            var image = $('<img src="' + results[i].images.fixed_height_still.url + '" data-still="' + results[i].images.fixed_height_still.url + '" data-animate="' + results[i].images.fixed_height.url + '" data-state="still" class="image">');
+
             var ratingP = $('<p>Rating: ' + results[i].rating.toUpperCase() + '</p>');
             imagesDiv.append(image);
             imagesDiv.append(ratingP);
             $("#images-div").append(imagesDiv);
         }
 
+        $(".image").on("click", function(){
+
+            var currentState = $(this).attr("data-state");
+            // Default attr state is "still"
+
+            if (currentState === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }
+        });
     });
 });
